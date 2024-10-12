@@ -1,0 +1,130 @@
+---
+import Card from '../components/Card.astro'
+import Layout from '../layouts/Layout.astro'
+
+const servicios = [
+  {
+    titulo: 'Mantenimiento de Hardware',
+    ruta: '/hardware',
+    imagen: 'images/hardware_2.jpg',
+  },
+  {
+    titulo: 'Mantenimiento de Software',
+    ruta: '/software',
+    imagen: 'images/mantenimiento-software.jpg',
+  },
+  {
+    titulo: 'Optimización del Sistema',
+    ruta: '/optimizacion',
+    imagen: 'images/optimizacion-sistema.jpg',
+  },
+  {
+    titulo: 'Seguridad Informática',
+    ruta: '/seguridad',
+    imagen: 'images/seguridad-informatica.jpg',
+  },
+]
+---
+
+<Layout title='TecnoMantén - Mantenimiento de Computadoras y Software'>
+  <main>
+    <h1>Bienvenido a <span class='text-gradient'>TecnoMantén</span></h1>
+    <p class='instrucciones'>
+      Tu guía completa para el mantenimiento de computadoras y software.
+      Descubre cómo mantener tu equipo en óptimas condiciones y protegido.
+    </p>
+    <section class='servicios'>
+      <h2>Nuestros Servicios</h2>
+      <div class='link-card-grid'>
+        {
+          servicios.map((servicio) => (
+            <Card
+              href={servicio.ruta}
+              title={servicio.titulo}
+              body='Aprende más sobre cómo mantener tu equipo en óptimas condiciones.'
+              imagen={servicio.imagen}
+            />
+          ))
+        }
+      </div>
+    </section>
+    <section class='cta'>
+      <h2>¿Necesitas ayuda con tu equipo?</h2>
+      <p>Contáctanos hoy mismo para una consulta gratuita</p>
+      <a href='/contacto' class='cta-button'>Contactar ahora</a>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: var(--text-color);
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instrucciones {
+    margin-bottom: 2rem;
+    border: 1px solid rgba(var(--accent-light), 25%);
+    background: linear-gradient(
+      rgba(var(--accent-dark), 66%),
+      rgba(var(--accent-dark), 33%)
+    );
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  .servicios {
+    margin-top: 2rem;
+  }
+  .servicios h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+  .cta {
+    margin-top: 3rem;
+    text-align: center;
+    background-color: rgba(var(--accent-dark), 0.2);
+    padding: 2rem;
+    border-radius: 8px;
+  }
+  .cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  .cta-button:hover {
+    background-color: rgb(var(--accent-light));
+  }
+</style>

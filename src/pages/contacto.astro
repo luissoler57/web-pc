@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contáctenos - TecnoMantén">
+	<main>
+		<h1>Contáctenos</h1>
+		<p class="descripcion">
+			¿Tienes alguna pregunta o necesitas ayuda con tu equipo? No dudes en contactarnos. Estamos aquí para ayudarte.
+		</p>
+		<form class="contacto-form">
+			<div class="form-group">
+				<label for="nombre">Nombre:</label>
+				<input type="text" id="nombre" name="nombre" required>
+			</div>
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required>
+			</div>
+			<div class="form-group">
+				<label for="asunto">Asunto:</label>
+				<input type="text" id="asunto" name="asunto" required>
+			</div>
+			<div class="form-group">
+				<label for="mensaje">Mensaje:</label>
+				<textarea id="mensaje" name="mensaje" required></textarea>
+			</div>
+			<button type="submit" class="enviar-btn">Enviar Mensaje</button>
+		</form>
+		<div class="info-contacto">
+			<h2>Información de Contacto</h2>
+			<p><strong>Email:</strong> info@tecnomanten.com</p>
+			<p><strong>Teléfono:</strong> +1 234 567 890</p>
+			<p><strong>Dirección:</strong> Calle Tecnología 123, Ciudad Digital, País de la Innovación</p>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.descripcion {
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+	.contacto-form {
+		background-color: #23262d;
+		padding: 2rem;
+		border-radius: 8px;
+		margin-bottom: 2rem;
+	}
+	.form-group {
+		margin-bottom: 1rem;
+	}
+	label {
+		display: block;
+		margin-bottom: 0.5rem;
+	}
+	input, textarea {
+		width: 100%;
+		padding: 0.5rem;
+		border: 1px solid #444;
+		border-radius: 4px;
+		background-color: #2c2f3b;
+		color: white;
+	}
+	textarea {
+		height: 150px;
+	}
+	.enviar-btn {
+		display: block;
+		width: 100%;
+		padding: 0.75rem;
+		background-color: #646cff;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		font-size: 1rem;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+	.enviar-btn:hover {
+		background-color: #4a4fcc;
+	}
+	.info-contacto {
+		background-color: #23262d;
+		padding: 2rem;
+		border-radius: 8px;
+	}
+	.info-contacto h2 {
+		margin-top: 0;
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+</style>

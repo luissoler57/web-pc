@@ -1,0 +1,161 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+const serviciosHardware = [
+  {
+    titulo: 'Limpieza de componentes',
+    descripcion:
+      'Eliminación de polvo y suciedad de todos los componentes internos.',
+  },
+  {
+    titulo: 'Reemplazo de pasta térmica',
+    descripcion:
+      'Aplicación de pasta térmica de alta calidad para mejorar la disipación de calor.',
+  },
+  {
+    titulo: 'Actualización de componentes',
+    descripcion:
+      'Instalación de nuevos componentes como RAM, SSD, o tarjetas gráficas.',
+  },
+  {
+    titulo: 'Diagnóstico de hardware',
+    descripcion:
+      'Identificación y solución de problemas en componentes defectuosos.',
+  },
+]
+---
+
+<Layout title='Mantenimiento de Hardware'>
+  <main>
+    <h1>Mantenimiento de <span class='text-gradient'>Hardware</span></h1>
+    <p class='descripcion'>
+      El mantenimiento de hardware es esencial para mantener tu computadora
+      funcionando de manera óptima. Nuestros servicios especializados garantizan
+      el mejor rendimiento y longevidad de tu equipo.
+    </p>
+    <img
+      src='/images/hardware-mantenice.jpg'
+      alt='Seguridad Informática'
+      class='hero-image'
+    />
+    <section class='servicios'>
+      <h2>Nuestros Servicios de Hardware</h2>
+      <div class='servicios-grid'>
+        {
+          serviciosHardware.map((servicio) => (
+            <div class='servicio-card'>
+              <h3>{servicio.titulo}</h3>
+              <p>{servicio.descripcion}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+    <section class='consejos'>
+      <h2>Consejos para el Mantenimiento de Hardware</h2>
+      <ul>
+        <li>Realiza una limpieza física de tu equipo al menos cada 6 meses.</li>
+        <li>Mantén tu área de trabajo libre de polvo y líquidos.</li>
+        <li>
+          Utiliza un supresor de picos para proteger tu equipo de fluctuaciones
+          eléctricas.
+        </li>
+        <li>Monitorea las temperaturas de tus componentes regularmente.</li>
+      </ul>
+    </section>
+    <section class='faq'>
+      <h2>Preguntas Frecuentes</h2>
+      <details>
+        <summary>¿Con qué frecuencia debo limpiar mi computadora?</summary>
+        <p>
+          Se recomienda limpiar el interior de tu computadora al menos cada 6
+          meses, o con mayor frecuencia si vives en un ambiente con mucho polvo.
+        </p>
+      </details>
+      <details>
+        <summary>¿Cómo sé si necesito actualizar mi hardware?</summary>
+        <p>
+          Si notas que tu computadora se ha vuelto más lenta, tiene problemas
+          para ejecutar programas nuevos, o si tienes componentes con más de 5
+          años, es posible que sea hora de considerar una actualización.
+        </p>
+      </details>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .descripcion {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  .servicios,
+  .consejos,
+  .faq {
+    margin-top: 3rem;
+  }
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .servicio-card {
+    background-color: #23262d;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  .servicio-card:hover {
+    transform: translateY(-5px);
+  }
+  .servicio-card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+  ul {
+    padding-left: 1.5rem;
+  }
+  details {
+    background-color: #23262d;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: bold;
+  }
+  details p {
+    margin-top: 1rem;
+    padding-left: 1rem;
+  }
+</style>

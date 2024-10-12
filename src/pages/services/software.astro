@@ -1,0 +1,130 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+const serviciosSoftware = [
+  {
+    titulo: 'Actualización de sistemas operativos',
+    descripcion:
+      'Instalación de las últimas actualizaciones y parches de seguridad.',
+  },
+  {
+    titulo: 'Limpieza de software',
+    descripcion: 'Eliminación de programas no deseados y archivos temporales.',
+  },
+  {
+    titulo: 'Optimización del registro',
+    descripcion:
+      'Corrección de errores y optimización del registro de Windows.',
+  },
+  {
+    titulo: 'Gestión de controladores',
+    descripcion:
+      'Actualización y optimización de controladores de dispositivos.',
+  },
+]
+---
+
+<Layout title='Mantenimiento de Software'>
+  <main>
+    <h1>Mantenimiento de <span class='text-gradient'>Software</span></h1>
+    <p class='descripcion'>
+      El mantenimiento de software es crucial para mantener tu sistema operativo
+      y aplicaciones funcionando de manera eficiente y segura. Nuestros
+      servicios garantizan un rendimiento óptimo y una mayor seguridad para tu
+      equipo.
+    </p>
+    <img
+      src='/images/mantenimiento-software.jpg'
+      alt='Seguridad Informática'
+      class='hero-image'
+    />
+    <section class='servicios'>
+      <h2>Nuestros Servicios de Software</h2>
+      <div class='servicios-grid'>
+        {
+          serviciosSoftware.map((servicio) => (
+            <div class='servicio-card'>
+              <h3>{servicio.titulo}</h3>
+              <p>{servicio.descripcion}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+    <section class='consejos'>
+      <h2>Mejores Prácticas para el Mantenimiento de Software</h2>
+      <ul>
+        <li>
+          Mantén tu sistema operativo y aplicaciones siempre actualizados.
+        </li>
+        <li>Realiza copias de seguridad regulares de tus datos importantes.</li>
+        <li>Utiliza un antivirus confiable y mantenlo actualizado.</li>
+        <li>
+          Desinstala programas que ya no utilices para liberar espacio y
+          recursos.
+        </li>
+      </ul>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .descripcion {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  .servicios,
+  .consejos {
+    margin-top: 3rem;
+  }
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .servicio-card {
+    background-color: #23262d;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  .servicio-card:hover {
+    transform: translateY(-5px);
+  }
+  .servicio-card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+  ul {
+    padding-left: 1.5rem;
+  }
+</style>

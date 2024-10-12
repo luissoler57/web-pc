@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const tutoriales = [
+  { titulo: 'Cómo limpiar tu PC', categoria: 'Hardware', enlace: '#' },
+  { titulo: 'Actualización de Windows', categoria: 'Software', enlace: '#' },
+  { titulo: 'Configuración de firewall', categoria: 'Seguridad', enlace: '#' },
+  { titulo: 'Optimización de disco duro', categoria: 'Optimización', enlace: '#' },
+  { titulo: 'Instalación de antivirus', categoria: 'Seguridad', enlace: '#' },
+  { titulo: 'Limpieza de registros', categoria: 'Software', enlace: '#' },
+];
+---
+
+<Layout title="Tutoriales - TecnoMantén">
+	<main>
+		<h1>Tutoriales <span class="text-gradient">Prácticos</span></h1>
+		<p class="descripcion">
+			Aprende a mantener y optimizar tu equipo con nuestros tutoriales paso a paso. Desde limpieza básica hasta configuraciones avanzadas de seguridad.
+		</p>
+		<div class="tutoriales-lista">
+			{tutoriales.map((tutorial) => (
+				<div class="tutorial-item">
+					<h3>{tutorial.titulo}</h3>
+					<span class="categoria">{tutorial.categoria}</span>
+					<a href={tutorial.enlace} class="ver-tutorial">Ver tutorial</a>
+				</div>
+			))}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.descripcion {
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+	.tutoriales-lista {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+	}
+	.tutorial-item {
+		background-color: #23262d;
+		padding: 1.5rem;
+		border-radius: 8px;
+		transition: transform 0.3s ease;
+	}
+	.tutorial-item:hover {
+		transform: translateY(-5px);
+	}
+	.tutorial-item h3 {
+		margin-top: 0;
+		font-size: 1.2rem;
+	}
+	.categoria {
+		display: inline-block;
+		background-color: #646cff;
+		color: white;
+		padding: 0.2rem 0.5rem;
+		border-radius: 4px;
+		font-size: 0.9rem;
+		margin-bottom: 0.5rem;
+	}
+	.ver-tutorial {
+		display: inline-block;
+		margin-top: 1rem;
+		color: #646cff;
+		text-decoration: none;
+		font-weight: bold;
+	}
+</style>

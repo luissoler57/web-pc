@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const herramientas = [
+  { nombre: 'CCleaner', descripcion: 'Limpieza y optimización del sistema', enlace: 'https://www.ccleaner.com/' },
+  { nombre: 'Malwarebytes', descripcion: 'Protección contra malware', enlace: 'https://www.malwarebytes.com/' },
+  { nombre: 'CPU-Z', descripcion: 'Información detallada del hardware', enlace: 'https://www.cpuid.com/softwares/cpu-z.html' },
+  { nombre: 'Revo Uninstaller', descripcion: 'Desinstalación completa de programas', enlace: 'https://www.revouninstaller.com/' },
+  { nombre: 'Speccy', descripcion: 'Análisis de componentes del sistema', enlace: 'https://www.ccleaner.com/speccy' },
+  { nombre: 'Autoruns', descripcion: 'Gestión de programas de inicio', enlace: 'https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns' },
+];
+---
+
+<Layout title="Herramientas Recomendadas - TecnoMantén">
+	<main>
+		<h1>Herramientas <span class="text-gradient">Recomendadas</span></h1>
+		<p class="descripcion">
+			Descubre las mejores herramientas para mantener tu equipo en óptimas condiciones. Estas aplicaciones te ayudarán a optimizar, limpiar y proteger tu sistema.
+		</p>
+		<div class="herramientas-grid">
+			{herramientas.map((herramienta) => (
+				<div class="herramienta-card">
+					<h3>{herramienta.nombre}</h3>
+					<p>{herramienta.descripcion}</p>
+					<a href={herramienta.enlace} target="_blank" rel="noopener noreferrer" class="descargar-btn">Descargar</a>
+				</div>
+			))}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.descripcion {
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+	.herramientas-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+	}
+	.herramienta-card {
+		background-color: #23262d;
+		padding: 1.5rem;
+		border-radius: 8px;
+		transition: transform 0.3s ease;
+	}
+	.herramienta-card:hover {
+		transform: translateY(-5px);
+	}
+	.herramienta-card h3 {
+		margin-top: 0;
+		font-size: 1.2rem;
+	}
+	.descargar-btn {
+		display: inline-block;
+		margin-top: 1rem;
+		padding: 0.5rem 1rem;
+		background-color: #646cff;
+		color: white;
+		text-decoration: none;
+		border-radius: 4px;
+		transition: background-color 0.3s ease;
+	}
+	.descargar-btn:hover {
+		background-color: #4a4fcc;
+	}
+</style>

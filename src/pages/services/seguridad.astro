@@ -1,0 +1,131 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+const serviciosSeguridad = [
+  {
+    titulo: 'Instalación de antivirus',
+    descripcion: 'Configuración de software antivirus de última generación.',
+  },
+  {
+    titulo: 'Configuración de firewall',
+    descripcion:
+      'Optimización de la seguridad de red mediante configuración avanzada de firewall.',
+  },
+  {
+    titulo: 'Eliminación de malware',
+    descripcion:
+      'Detección y eliminación de virus, spyware y otros programas maliciosos.',
+  },
+  {
+    titulo: 'Auditoría de seguridad',
+    descripcion:
+      'Evaluación completa de la seguridad del sistema y recomendaciones de mejora.',
+  },
+]
+---
+
+<Layout title='Seguridad Informática'>
+  <main>
+    <h1>Seguridad <span class='text-gradient'>Informática</span></h1>
+    <p class='descripcion'>
+      La seguridad informática es fundamental para proteger tu equipo y datos
+      personales. Nuestros servicios de seguridad te ayudarán a mantener tu
+      sistema protegido contra las últimas amenazas cibernéticas.
+    </p>
+    <img
+      src='/images/cybersecurity.jpg'
+      alt='Seguridad Informática'
+      class='hero-image'
+    />
+    <section class='servicios'>
+      <h2>Servicios de Seguridad</h2>
+      <div class='servicios-grid'>
+        {
+          serviciosSeguridad.map((servicio) => (
+            <div class='servicio-card'>
+              <h3>{servicio.titulo}</h3>
+              <p>{servicio.descripcion}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+    <section class='consejos'>
+      <h2>Consejos de Seguridad Informática</h2>
+      <ul>
+        <li>Utiliza contraseñas fuertes y únicas para cada cuenta.</li>
+        <li>Mantén tu sistema operativo y software siempre actualizados.</li>
+        <li>
+          Ten cuidado al abrir correos electrónicos o archivos adjuntos de
+          fuentes desconocidas.
+        </li>
+        <li>
+          Utiliza una red privada virtual (VPN) cuando te conectes a redes Wi-Fi
+          públicas.
+        </li>
+        <li>Realiza copias de seguridad regulares de tus datos importantes.</li>
+      </ul>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .descripcion {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  .servicios,
+  .consejos {
+    margin-top: 3rem;
+  }
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .servicio-card {
+    background-color: #23262d;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  .servicio-card:hover {
+    transform: translateY(-5px);
+  }
+  .servicio-card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+  ul {
+    padding-left: 1.5rem;
+  }
+</style>

@@ -1,0 +1,113 @@
+---
+import Card from '../../components/Card.astro'
+import Layout from '../../layouts/Layout.astro'
+
+const servicios = [
+  {
+    titulo: 'Mantenimiento de Hardware',
+    ruta: '/services/hardware',
+    imagen: '/images/hardware.jpg',
+    descripcion:
+      'Servicio completo de limpieza y optimización de componentes físicos.',
+  },
+  {
+    titulo: 'Mantenimiento de Software',
+    ruta: '/services/software',
+    imagen: '/images/software.jpg',
+    descripcion:
+      'Actualización y optimización de sistemas operativos y aplicaciones.',
+  },
+  {
+    titulo: 'Optimización del Sistema',
+    ruta: '/services/optimizacion',
+    imagen: '/images/optimizacion.jpg',
+    descripcion: 'Mejora del rendimiento general de tu equipo.',
+  },
+  {
+    titulo: 'Seguridad Informática',
+    ruta: '/services/seguridad',
+    imagen: '/images/seguridad.jpg',
+    descripcion:
+      'Protección contra amenazas y configuración de medidas de seguridad.',
+  },
+  {
+    titulo: 'Recuperación de Datos',
+    ruta: '/services/recuperacion',
+    imagen: '/images/recuperacion.jpg',
+    descripcion: 'Rescate de información perdida o dañada.',
+  },
+  {
+    titulo: 'Asesoría Técnica',
+    ruta: '/services/asesoria',
+    imagen: '/images/asesoria.jpg',
+    descripcion: 'Consultoría personalizada para tus necesidades tecnológicas.',
+  },
+]
+---
+
+<Layout title='Servicios - TecnoMantén'>
+  <main>
+    <h1>Nuestros <span class='text-gradient'>Servicios</span></h1>
+    <p class='descripcion'>
+      En TecnoMantén ofrecemos una amplia gama de servicios para mantener tu
+      equipo en óptimas condiciones. Descubre cómo podemos ayudarte a mejorar el
+      rendimiento y la seguridad de tu tecnología.
+    </p>
+    <div class='servicios-grid'>
+      {
+        servicios.map((servicio) => (
+          <Card
+            href={servicio.ruta}
+            title={servicio.titulo}
+            body={servicio.descripcion}
+            imagen={servicio.imagen}
+          />
+        ))
+      }
+    </div>
+  </main>
+
+  <style>
+    :root {
+      --text-color: #333;
+      --accent-color: #0078d4;
+      --accent-light: #60a5fa;
+      --accent-dark: #1e3a8a;
+      --accent-gradient: linear-gradient(90deg, #0078d4, #60a5fa);
+    }
+
+    main {
+      margin: auto;
+      padding: 1rem;
+      width: 800px;
+      max-width: calc(100% - 2rem);
+      color: var(--text-color);
+      font-size: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    .text-gradient {
+      background-image: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400%;
+      background-position: 0%;
+    }
+    .descripcion {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 0;
+    }
+  </style>
+</Layout>
