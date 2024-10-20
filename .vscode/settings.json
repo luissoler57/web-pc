@@ -24,5 +24,11 @@
     "activityBar.background": "#5A1222",
     "titleBar.activeBackground": "#7E192F",
     "titleBar.activeForeground": "#FEFBFC"
-  }
+  },
+  "appService.zipIgnorePattern": [
+    "node_modules{,/**}",
+    ".vscode{,/**}"
+  ],
+  "appService.defaultWebAppToDeploy": "/subscriptions/7a60519a-b377-49f3-9088-2648678ad4ba/resourceGroups/resource-test-1/providers/Microsoft.Web/sites/web-test",
+  "appService.deploySubpath": "dist"
 }
