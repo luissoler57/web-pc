@@ -1,12 +1,13 @@
 ---
 import Card from '../components/Card.astro'
 import Layout from '../layouts/Layout.astro'
+import '../styles/global.css'
 
 const servicios = [
   {
     titulo: 'Mantenimiento de Hardware',
     ruta: '/hardware',
-    imagen: 'images/hardware_2.jpg',
+    imagen: 'images/hardware.jpg',
   },
   {
     titulo: 'Mantenimiento de Software',
@@ -21,7 +22,7 @@ const servicios = [
   {
     titulo: 'Seguridad Informática',
     ruta: '/seguridad',
-    imagen: 'images/seguridad-informatica.jpg',
+    imagen: 'images/seguridad.jpg',
   },
 ]
 ---
@@ -57,22 +58,6 @@ const servicios = [
 </Layout>
 
 <style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: var(--text-color);
-    font-size: 20px;
-    line-height: 1.6;
-  }
-  h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-  }
   .text-gradient {
     background-image: var(--accent-gradient);
     -webkit-background-clip: text;

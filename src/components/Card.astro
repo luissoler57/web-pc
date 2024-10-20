@@ -6,7 +6,7 @@ interface Props {
   imagen: string
 }
 
-const { href, title, body, imagen } = Astro.props
+const { href, title = '', body, imagen = '' } = Astro.props
 ---
 
 <li class='link-card'>
